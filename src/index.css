@@ -3,17 +3,34 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-forest-900: #1B4332;
-  --color-forest-800: #193a2b;
-  --color-forest-700: #2D6A4F;
-  --color-forest-600: #40916c;
-  --color-forest-500: #52b788;
-  --color-forest-400: #74c69d;
-  --color-forest-300: #95d5b2;
-  --color-forest-200: #b7e4c7;
-  --color-forest-100: #d8f3dc;
-  --color-forest-50:  #eaf8ee;
-  --color-brand-bg: #F0F4F2;
+  
+  /* Feature Color: #1D5AAE (App primary) */
+  --color-brand-blue-900: #0E2C56;
+  --color-brand-blue-800: #143F7A;
+  --color-brand-blue-700: #184D95;
+  --color-brand-blue-600: #1A54A4;
+  --color-brand-blue-500: #1d5aae;
+  --color-brand-blue-400: #4A80C7;
+  --color-brand-blue-300: #7DA4D8;
+  --color-brand-blue-200: #B3CBE9;
+  --color-brand-blue-100: #E0EAF6;
+  --color-brand-blue-50:  #F2F6FB;
+
+  /* Logo Greens */
+  --color-brand-green-900: #134732;
+  --color-brand-green-800: #1B6547;
+  --color-brand-green-700: #22845D;
+  --color-brand-green-600: #29A272;
+  --color-brand-green-500: #2CA274;
+  --color-brand-green-400: #55B58F;
+  --color-brand-green-300: #86CBAE;
+  --color-brand-green-200: #BAE2D1;
+  --color-brand-green-100: #E3F4ED;
+  --color-brand-green-50:  #F3FAF7;
+
+  --color-brand-lime-500: #A8D235;
+
+  --color-brand-bg: #F4F7F9;
 }
 
 body {
