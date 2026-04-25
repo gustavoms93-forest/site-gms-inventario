@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import logo from './logo.png';
+import logo02 from './logo02.png';
 import {
   WifiOff,
   Calculator,
@@ -13,7 +15,8 @@ import {
   Smartphone,
   Check,
   Share2,
-  Menu
+  Menu,
+  Leaf
 } from 'lucide-react';
 
 const fadeIn = {
@@ -52,7 +55,7 @@ function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1655af] shadow-md py-3 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src="/logo01.png" alt="GMS Inventário Logo" className="w-10 h-10 object-contain" />
+          <img src={logo02} alt="GMS Inventário Logo" className="w-10 h-10 object-contain mix-blend-screen" />
           <span className="text-xl font-bold tracking-tight">
             GMS Inventário
           </span>
@@ -632,7 +635,7 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/pwa-512x512.png" alt="GMS Inventário Logo" className="w-10 h-10 rounded-xl shadow-md" />
+              <img src={logo} alt="GMS Inventário Logo" className="h-10 w-auto mix-blend-multiply" />
               <span className="text-xl font-extrabold tracking-tight text-brand-blue-900">
                 GMS <span className="font-medium text-brand-green-600">Inventário</span>
               </span>
