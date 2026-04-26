@@ -552,19 +552,19 @@ function Pricing() {
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-center gap-3 text-slate-600 text-sm font-medium">
                 <Check className="w-5 h-5 text-brand-green-500" />
-                Limite de 2 projetos
+                Limite de até 3 projetos
               </li>
               <li className="flex items-center gap-3 text-slate-600 text-sm font-medium">
                 <Check className="w-5 h-5 text-brand-green-500" />
-                Até 5 parcelas por projeto
-              </li>
-              <li className="flex items-center gap-3 text-slate-600 text-sm font-medium">
-                <Check className="w-5 h-5 text-brand-green-500" />
-                Catálogo offline básico
+                Máximo de 5 parcela por projeto
               </li>
               <li className="flex items-center gap-3 text-slate-600 text-sm font-medium">
                 <Check className="w-5 h-5 text-brand-green-500" />
                 Coleta 100% offline
+              </li>
+              <li className="flex items-center gap-3 text-slate-600 text-sm font-medium">
+                <Check className="w-5 h-5 text-brand-green-500" />
+                Exportação de inventario florestal em Excel
               </li>
             </ul>
             
