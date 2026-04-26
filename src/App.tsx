@@ -646,7 +646,7 @@ function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-brand-blue-50 text-slate-400 hover:text-brand-blue-600 transition-colors font-bold text-sm">
                 in
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-brand-blue-50 text-slate-400 hover:text-brand-blue-600 transition-colors font-bold text-sm">
+              <a href="https://www.instagram.com/gmsflorestal/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-brand-blue-50 text-slate-400 hover:text-brand-blue-600 transition-colors font-bold text-sm">
                 ig
               </a>
             </div>
@@ -669,7 +669,7 @@ function Footer() {
               <li><a href="#" className="hover:text-brand-blue-600 transition-colors">Sobre nós</a></li>
               <li><a href="#" className="hover:text-brand-blue-600 transition-colors">Contato</a></li>
               <li><a href="#" className="hover:text-brand-blue-600 transition-colors">Termos de Uso</a></li>
-              <li><a href="#" className="hover:text-brand-blue-600 transition-colors">Política de Privacidade</a></li>
+              <li><a href="https://sites.google.com/view/gms-inventario-politicapvcdd" target="_blank" rel="noopener noreferrer" className="hover:text-brand-blue-600 transition-colors">Política de Privacidade</a></li>
             </ul>
           </div>
         </div>
