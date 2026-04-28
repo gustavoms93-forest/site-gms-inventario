@@ -85,7 +85,7 @@ function Hero() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue-50 text-brand-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-6 w-fit border border-brand-blue-100">
-              LANÇAMENTO 2.0 • OFFLINE-FIRST
+              LANÇAMENTO EM BREVE
             </div>
             
             <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
