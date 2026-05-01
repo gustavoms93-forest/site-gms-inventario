@@ -73,7 +73,10 @@ function Navbar() {
 }
 
 function Hero() {
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
+    <>
     <section className="relative pt-20 pb-0 overflow-hidden bg-brand-bg lg:h-[800px]">
       <div className="flex flex-col lg:flex-row h-full max-w-7xl mx-auto bg-white lg:shadow-2xl lg:overflow-hidden relative z-10 w-full mb-10 mt-6 lg:rounded-2xl border-x border-slate-100">
         
@@ -98,7 +101,10 @@ function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
-              <button className="bg-brand-blue-500 hover:bg-brand-blue-600 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-brand-blue-500/30 transition-all w-full sm:w-auto">
+              <button 
+                onClick={() => setShowModal(true)}
+                className="bg-brand-blue-500 hover:bg-brand-blue-600 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg shadow-brand-blue-500/30 transition-all w-full sm:w-auto"
+              >
                 Baixar Agora
               </button>
               <div className="text-sm text-slate-400 font-medium sm:border-l border-slate-200 sm:pl-4 py-2 hidden sm:block">
@@ -188,6 +194,43 @@ function Hero() {
         </div>
       </div>
     </section>
+
+    {/* Launch Modal */}
+    {showModal && (
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setShowModal(false)} />
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          className="relative bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl text-center"
+        >
+          <div className="w-16 h-16 bg-brand-blue-50 text-brand-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Smartphone className="w-8 h-8" />
+          </div>
+          <h3 className="text-2xl font-extrabold text-slate-900 mb-3 tracking-tight">O lançamento está próximo!</h3>
+          <p className="text-slate-600 mb-8 leading-relaxed font-medium">
+            O aplicativo GMS Inventário será lançado em breve nas lojas. Convidamos você a acompanhar nossas novidades e ser um dos primeiros a testar!
+          </p>
+          <div className="space-y-3">
+            <a 
+              href="https://www.instagram.com/gmsinvetario" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full py-4 bg-brand-blue-500 hover:bg-brand-blue-600 text-white rounded-xl font-bold transition-colors"
+            >
+              Acompanhar no Instagram
+            </a>
+            <button 
+              onClick={() => setShowModal(false)}
+              className="block w-full py-4 text-slate-500 hover:text-slate-700 font-bold transition-colors"
+            >
+              Fechar
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    )}
+    </>
   );
 }
 
