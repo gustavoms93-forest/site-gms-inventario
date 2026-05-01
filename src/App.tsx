@@ -656,6 +656,18 @@ function Pricing() {
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
                 <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
+                Suficiência Amostral Automática
+              </li>
+              <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
+                Estatística em Tempo Real
+              </li>
+              <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
+                Volume em m³ por parcela /projeto e estimativa de m³/ha
+              </li>
+              <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
                 Suporte prioritário via WhatsApp
               </li>
             </ul>
