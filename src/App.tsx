@@ -15,7 +15,8 @@ import {
   Check,
   Share2,
   Menu,
-  Leaf
+  Leaf,
+  PieChart
 } from 'lucide-react';
 
 const fadeIn = {
@@ -244,19 +245,24 @@ function Benefits() {
     {
       icon: Calculator,
       title: 'Cálculo Real',
-      description: 'Volume por árvore, conversão automática de CAP para DAP e resumo estatístico instantâneo. Controle as suas médias enquanto ainda está no campo.'
+      description: 'Volume por árvore, conversão automática de CAP para DAP e resumo estatístico instantâneo. Acompanhe Volume Total (m³), Volume por hectare (M³/ha), Média de DAP/Altura e Coeficiente de Variação (CV%) . Controle as suas médias enquanto ainda está no campo.'
     },
     {
       icon: FileSpreadsheet,
       title: 'Exportação',
       description: 'Gere planilhas em Excel formatadas nos padrões corporativos e arquivos KML espaciais. Envie por WhatsApp ou E-mail da sua tenda no campo.'
+    },
+    {
+      icon: PieChart,
+      title: 'Suficiência Amostral',
+      description: 'Calcule o erro de amostragem em tempo real. Saiba na hora se o número de parcelas atingiu a precisão estatística exigida pelo órgão ambiental, evitando retornos desnecessários ao campo.'
     }
   ];
 
   return (
     <section id="benefits" className="py-20 bg-brand-bg relative z-20 -mt-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
           {benefits.map((b, i) => (
             <motion.div 
               key={i}
@@ -338,7 +344,7 @@ function Features() {
               </div>
               <div>
                 <strong className="text-slate-900 font-semibold block mb-1">Configuração Dinâmica</strong>
-                Personalize os parâmetros da parcela, erro de amostragem (5% a 20%), probabilidade estatística e variáveis de coleta exigidas em campo.
+                Personalize os parâmetros da parcela, erro de amostragem (5% a 25%), probabilidade estatística (75% a 99%) e variáveis de coleta exigidas em campo.
               </div>
               <div>
                 <strong className="text-slate-900 font-semibold block mb-1">Modo Silvicultura</strong>
@@ -451,12 +457,16 @@ function Features() {
             <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Mapeamento e <br />GPS Avançado</h3>
             <div className="space-y-6 text-slate-600 font-light">
               <div>
-                <strong className="text-slate-900 font-semibold block mb-1">Captura de Sinal Estabilizado</strong>
-                Navegação com indicador de precisão em tempo real (Verde, Amarelo, Vermelho) adaptado para avaliações reais sob o dossel denso da floresta.
+                <strong className="text-slate-900 font-semibold block mb-1">Captura de GPS por Indivíduo</strong>
+                Fixação de coordenadas estabilizadas sob o dossel para cada árvore.
               </div>
               <div>
-                <strong className="text-slate-900 font-semibold block mb-1">Visualização Híbrida e Multinível</strong>
-                Alterne entre mapas de ruas e satélite. Visualize a disposição global de projetos, as parcelas no terreno e a geolocalização exata de cada árvore inserida.
+                <strong className="text-slate-900 font-semibold block mb-1">Importação de Áreas (KML/KMZ)</strong>
+                Visualize os polígonos do local do inventário diretamente no mapa do app (offline).
+              </div>
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Exportação Espacial (KML)</strong>
+                Gere mapas de pontos prontos para o QGIS e Google Earth.
               </div>
             </div>
           </motion.div>
@@ -639,36 +649,40 @@ function Pricing() {
             
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Projetos e parcelas ilimitadas
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Inventários ilimitados</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Sincronização em nuvem segura
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Dashboard Estatístico de Volume e volume por hectare em tempo real</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Exportação avançada (Excel / KML)
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Indicador de suficiência amostral, erro amostral e coeficiente de variação em tempo real</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Todas as metodologias liberadas
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Backup em nuvem (Sincronização automática)</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Suficiência Amostral Automática
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Exportação e importação de Planilhas Excel (.xlsx) e CSV</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Estatística em Tempo Real
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Importação e Exportação de coordenadas (KML/KMZ)</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Volume em m³ por parcela /projeto e estimativa de m³/ha
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>GPS, captura de coordenadas de árvore e parcelas</span>
               </li>
               <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
-                <CheckCircle2 className="w-5 h-5 text-brand-green-400" />
-                Suporte prioritário via WhatsApp
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Catálogo de espécies e Modo Silvicultura</span>
+              </li>
+              <li className="flex items-center gap-3 text-white/90 text-sm font-medium">
+                <CheckCircle2 className="w-5 h-5 text-brand-green-400 shrink-0" />
+                <span>Suporte prioritário via WhatsApp</span>
               </li>
             </ul>
             
