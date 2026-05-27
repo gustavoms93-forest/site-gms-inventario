@@ -16,7 +16,9 @@ import {
   Share2,
   Menu,
   Leaf,
-  PieChart
+  PieChart,
+  ScanLine,
+  Barcode
 } from 'lucide-react';
 
 const fadeIn = {
@@ -415,7 +417,7 @@ function Features() {
         </div>
 
         {/* Block 3 */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-32">
            <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -468,6 +470,66 @@ function Features() {
                 <strong className="text-slate-900 font-semibold block mb-1">Exportação Espacial (KML)</strong>
                 Gere mapas de pontos prontos para o QGIS e Google Earth.
               </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Block 4 */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Leitor de Plaquetas <br />Integrado</h3>
+            <div className="space-y-6 text-slate-600 font-light">
+              <p>
+                Sabemos que o dia a dia no campo exige praticidade. Digitar números longos de etiquetas enquanto se usa luvas ou debaixo de sol forte toma tempo e gera inconsistências.
+              </p>
+              <p>
+                Pensando nisso, o GMS Inventário traz um leitor de código de barras e QR Code embutido, totalmente otimizado para a leitura de plaquetas florestais (como as da Signumat). Com um único toque, a câmera captura o código e insere a informação automaticamente no sistema, funcionando perfeitamente mesmo offline nas áreas mais remotas.
+              </p>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-square bg-slate-50 rounded-[3rem] border border-slate-100 p-8 relative flex items-center justify-center overflow-hidden">
+               <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] opacity-30 rounded-[3rem]"></div>
+               <div className="relative z-10 w-full h-full max-w-sm bg-slate-900 rounded-[2.5rem] shadow-2xl p-2 border-[6px] border-slate-800 flex flex-col justify-between">
+                 {/* App Topbar */}
+                 <div className="pt-6 pb-2 px-4 flex justify-between items-center text-white">
+                   <div className="text-xs font-bold">Ler Plaqueta</div>
+                   <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center"><Check className="w-3 h-3 text-brand-green-400" /></div>
+                 </div>
+                 {/* Camera Viewfinder */}
+                 <div className="flex-1 my-2 bg-slate-800 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-700">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80" alt="Camera View" className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-overlay" />
+                    {/* Viewfinder brackets */}
+                    <div className="absolute w-40 h-16 border-2 border-brand-green-400/80 rounded-xl flex items-center justify-center bg-brand-green-400/10 backdrop-blur-[2px]">
+                       <div className="absolute w-[110%] h-[2px] bg-brand-green-400 shadow-[0_0_12px_rgba(7ade80,1)] top-1/2 -translate-y-1/2"></div>
+                       <Barcode className="w-8 h-8 text-white opacity-90" />
+                    </div>
+                    {/* Corner marks */}
+                    <div className="absolute inset-4">
+                      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/50 rounded-tl-lg"></div>
+                      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/50 rounded-tr-lg"></div>
+                      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/50 rounded-bl-lg"></div>
+                      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/50 rounded-br-lg"></div>
+                    </div>
+                 </div>
+                 {/* Bottom Action */}
+                 <div className="p-4">
+                   <div className="bg-brand-blue-500 rounded-xl p-4 flex items-center justify-center gap-2 cursor-pointer hover:bg-brand-blue-400 transition-colors">
+                     <ScanLine className="w-5 h-5 text-brand-green-400" />
+                     <span className="text-white font-bold text-sm">Capturar Código</span>
+                   </div>
+                 </div>
+               </div>
             </div>
           </motion.div>
         </div>
