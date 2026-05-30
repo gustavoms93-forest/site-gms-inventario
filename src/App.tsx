@@ -974,15 +974,15 @@ function Reports() {
           className="md:w-1/2 w-full"
         >
           <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-6 flex flex-col gap-4 shadow-2xl">
-            <div className="bg-white rounded-2xl p-6 shadow-xl">
-              <div className="flex justify-between items-center border-b border-slate-100 pb-4 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-brand-green-50 text-brand-green-600 rounded-xl flex items-center justify-center">
+            <div className="bg-white rounded-2xl p-5 shadow-xl">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 mb-4 gap-3 sm:gap-0">
+                <div className="flex items-center gap-3 overflow-hidden w-full">
+                  <div className="w-10 h-10 bg-brand-green-50 text-brand-green-600 rounded-xl flex items-center justify-center shrink-0">
                     <FileSpreadsheet className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h5 className="text-slate-900 font-bold text-sm">Relatório_Inv_Fazenda.xlsx</h5>
-                    <p className="text-[10px] text-slate-400 font-medium tracking-wide">Modificado agora • 1.2 MB</p>
+                  <div className="min-w-0 flex-1">
+                    <h5 className="text-slate-900 font-bold text-sm truncate">Relatório_Inv_Fazenda.xlsx</h5>
+                    <p className="text-[10px] text-slate-400 font-medium tracking-wide truncate">Modificado agora • 1.2 MB</p>
                   </div>
                 </div>
               </div>
@@ -996,23 +996,23 @@ function Reports() {
                 <div className="h-6 bg-slate-50 rounded w-full"></div>
                 <div className="h-6 bg-slate-50 rounded w-full"></div>
               </div>
-              <div className="flex text-[10px] text-slate-400 gap-3 mt-2 font-bold tracking-wider uppercase">
+              <div className="flex flex-wrap text-[10px] text-slate-400 gap-2 mt-2 font-bold tracking-wider uppercase">
                  <span className="px-2 py-1 bg-brand-blue-50 text-brand-blue-700 rounded">Dados Brutos</span>
                  <span className="px-2 py-1">Estatística</span>
                  <span className="px-2 py-1">Estratos</span>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-4 shadow-xl flex justify-between items-center">
-               <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-50 text-slate-600 rounded-xl flex items-center justify-center">
+            <div className="bg-white rounded-2xl p-4 shadow-xl flex justify-between items-center gap-3">
+               <div className="flex items-center gap-3 min-w-0 flex-1">
+                  <div className="w-10 h-10 bg-slate-50 text-slate-600 rounded-xl flex items-center justify-center shrink-0">
                     <MapIcon className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h5 className="text-slate-900 font-bold text-sm">Pontos_Arvores.kml</h5>
+                  <div className="min-w-0">
+                    <h5 className="text-slate-900 font-bold text-sm truncate">Pontos_Arvores.kml</h5>
                   </div>
                 </div>
-                <button className="text-brand-blue-600 text-xs font-bold bg-brand-blue-50 px-4 py-2 rounded-lg hover:bg-brand-blue-100 transition-colors uppercase tracking-wider">
+                <button className="text-brand-blue-600 text-[10px] md:text-xs font-bold bg-brand-blue-50 px-3 md:px-4 py-2 rounded-lg hover:bg-brand-blue-100 transition-colors uppercase tracking-wider shrink-0">
                   Compartilhar
                 </button>
             </div>
