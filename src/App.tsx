@@ -18,7 +18,13 @@ import {
   Leaf,
   PieChart,
   ScanLine,
-  Barcode
+  Barcode,
+  ChevronLeft,
+  Search,
+  Plus,
+  TreePine,
+  Navigation,
+  Info
 } from 'lucide-react';
 
 const fadeIn = {
@@ -130,66 +136,172 @@ function Hero() {
             className="relative z-10 w-64 md:w-[280px]"
           >
             {/* Phone Mockup Re-styled Sleek */}
-            <div className="w-full h-[550px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden relative mx-auto flex flex-col">
+            <div className="w-full h-[550px] bg-white rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden relative mx-auto flex flex-col font-sans">
               <div className="absolute top-0 w-full h-6 bg-slate-800 flex justify-center items-end pb-1 z-20">
                 <div className="w-16 h-4 bg-slate-900 rounded-full"></div>
               </div>
-              <div className="w-full h-full p-4 flex flex-col font-sans pt-10">
-                <div className="flex justify-between items-center mb-6">
-                  <div className="text-white font-bold text-lg tracking-tight">Projeto #42</div>
-                  <div className="w-8 h-8 rounded-full bg-brand-blue-500 flex items-center justify-center text-[10px] text-white font-bold">
-                    GPS
-                  </div>
-                </div>
+              <div className="w-full h-full flex flex-col pt-8 bg-[#fafafa]">
                 
-                <div className="space-y-3 relative z-10">
-                  <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                    <div className="text-[10px] text-brand-blue-200 uppercase font-bold tracking-widest mb-1">DAP Atual</div>
-                    <div className="text-2xl text-white font-mono tracking-tight">28.5 cm</div>
+                {/* Header */}
+                <div className="flex items-center gap-3 px-4 py-3 bg-white border-b border-slate-100">
+                  <ChevronLeft className="w-5 h-5 text-slate-600" />
+                  <div className="flex flex-col text-brand-blue-600">
+                     <TreePine className="w-5 h-5 -mb-1" />
                   </div>
-                  <div className="bg-white/5 p-3 rounded-xl border border-white/10">
-                    <div className="text-[10px] text-brand-green-200 uppercase font-bold tracking-widest mb-1">Localização</div>
-                    <div className="text-[10px] text-brand-green-400 font-mono tracking-wider">-23.5505, -46.6333</div>
+                  <h3 className="font-bold text-slate-900 text-[17px]">Coleta de Dados</h3>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+                  {/* Tabs */}
+                  <div className="bg-slate-100 p-1 rounded-xl flex gap-1 shadow-inner">
+                    <div className="bg-white text-brand-blue-600 flex-1 py-2.5 rounded-lg text-center text-sm font-bold shadow-sm border border-slate-200">
+                      Novo Indivíduo
+                    </div>
+                    <div className="text-slate-500 flex-1 py-2.5 rounded-lg text-center text-sm font-medium">
+                      Fuste Adicional
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-r from-brand-blue-500 to-brand-green-500 p-4 rounded-xl mt-4 cursor-pointer hover:shadow-lg hover:shadow-brand-blue-500/20 transition-all">
-                    <div className="text-center font-bold text-white tracking-tight">SALVAR INDIVÍDUO</div>
+
+                  {/* Arvore info */}
+                  <div className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <span className="font-extrabold text-slate-900 text-[15px]">Árvore 4</span>
+                      <span className="text-xs text-slate-500 font-bold mt-0.5">Fuste 01</span>
+                    </div>
+                    <button className="flex shrink-0 items-center gap-1.5 bg-[#262423] border border-[#363433] text-white px-3.5 py-2 rounded-[14px] text-xs font-bold shadow-sm hover:bg-black transition-colors whitespace-nowrap">
+                      <Navigation className="w-3.5 h-3.5 stroke-[2.5]" />
+                      Capturar GPS
+                    </button>
+                  </div>
+
+                  {/* Especie */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 tracking-wider">ESPÉCIE</label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Search className="h-4 w-4 text-slate-400" />
+                      </div>
+                      <div className="w-full pl-9 pr-3 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-base shadow-sm">
+                        jatoba
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CAP / DAP Grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">CAP</label>
+                      <div className="relative">
+                        <div className="w-full pl-3 pr-8 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                          68,5
+                        </div>
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                          <span className="text-sm font-bold text-slate-400">cm</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">DAP</label>
+                      <div className="relative">
+                        <div className="w-full pl-3 pr-8 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                          21,8
+                        </div>
+                        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                          <span className="text-sm font-bold text-slate-400">cm</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Numero Plaqueta */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 tracking-wider">NUMERO PLAQUETA</label>
+                    <div className="relative">
+                      <div className="w-full pl-4 pr-12 py-3.5 border border-slate-200 rounded-xl bg-white text-slate-900 text-base font-bold shadow-sm">
+                        5060
+                      </div>
+                      <div className="absolute inset-y-0 right-1.5 flex items-center">
+                        <button className="p-2 bg-white border border-slate-200 rounded-lg text-slate-500 hover:bg-slate-50 transition-colors shadow-sm">
+                          <Barcode className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Alturas Grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">ALT. TOT (M)</label>
+                      <div className="w-full px-3 py-3.5 border border-slate-200 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                        7,5
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">ALT. COM (M)</label>
+                      <div className="w-full px-3 py-3.5 border border-slate-200 rounded-xl bg-white text-slate-300 text-lg tracking-widest text-center shadow-sm font-medium">
+                        0,0
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Qualidade do Fuste */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-slate-900">Qualidade do Fuste (1-4)</span>
+                      <Info className="w-4 h-4 text-slate-400" />
+                    </div>
+                    <div className="grid grid-cols-4 gap-2">
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">1</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">2</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">3</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">4</button>
+                    </div>
+                  </div>
+
+                  {/* Sanidade da Arvore */}
+                  <div className="space-y-2 pb-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-slate-900">Sanidade da Árvore (1-4)</span>
+                      <Info className="w-4 h-4 text-slate-400" />
+                    </div>
+                    <div className="grid grid-cols-4 gap-2">
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">1</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">2</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">3</button>
+                      <button className="py-2 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 hover:bg-slate-50 shadow-sm text-sm">4</button>
+                    </div>
+                  </div>
+
+                  {/* Observação */}
+                  <div className="space-y-1.5 pb-24">
+                    <label className="text-xs font-bold text-slate-700 tracking-wider">OBSERVAÇÃO</label>
+                    <textarea 
+                      className="w-full h-20 px-3 py-2 border border-slate-200 rounded-xl bg-white text-slate-500 text-[13px] placeholder:text-slate-400 resize-none shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-500/20 focus:border-brand-blue-500"
+                      placeholder="Observações gerais da árvore (opcional)"
+                    ></textarea>
                   </div>
                 </div>
 
-                <div className="mt-6 flex-1 overflow-hidden relative z-10">
-                   <h4 className="text-[10px] font-semibold text-white/70 mb-3 uppercase tracking-wider">Últimas Inserções</h4>
-                   <div className="space-y-2">
-                     {[
-                        { num: 12, esp: 'Eucalyptus u.', dap: 28.5 },
-                        { num: 11, esp: 'Eucalyptus u.', dap: 15.2 },
-                        { num: 10, esp: 'Eucalyptus u.', dap: 19.8 },
-                      ].map((item) => (
-                        <div key={item.num} className="bg-white/5 p-2 rounded-lg border border-white/5 flex justify-between items-center">
-                          <div className="flex gap-2 items-center">
-                            <div className="w-6 h-6 rounded bg-brand-blue-500/20 text-brand-blue-300 flex items-center justify-center text-[10px] font-bold">
-                              #{item.num}
-                            </div>
-                            <div>
-                              <p className="text-[10px] font-semibold text-white/90">{item.esp}</p>
-                              <p className="text-[9px] text-white/50 font-mono">DAP {item.dap}cm</p>
-                            </div>
-                          </div>
-                          <CheckCircle2 className="w-3 h-3 text-brand-green-400" />
-                        </div>
-                      ))}
-                   </div>
+                {/* Bottom Actions Fixed Area */}
+                <div className="absolute bottom-0 w-full bg-white border-t border-slate-100 p-4 pt-3 space-y-3 z-30 pb-6 rounded-b-[2.5rem]">
+                  <button className="w-full py-3.5 border border-brand-blue-200 bg-white text-brand-blue-600 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-brand-blue-50 transition-colors shadow-sm text-sm">
+                    <Plus className="w-4 h-4" />
+                    Salvar e Add Fuste
+                  </button>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button className="w-full py-[14px] border border-slate-200 bg-white text-slate-700 rounded-2xl font-bold hover:bg-slate-50 transition-colors shadow-sm text-sm">
+                      Cancelar
+                    </button>
+                    <button className="w-full py-[14px] bg-[#18539e] text-white rounded-2xl font-bold flex items-center gap-2 hover:bg-blue-800 transition-colors shadow-md text-sm px-4">
+                      <Check className="w-4 h-4 shrink-0 stroke-[3]" />
+                      <div className="flex-1 text-center -ml-2 leading-tight">
+                        Salvar<br/>Árvore
+                      </div>
+                    </button>
+                  </div>
                 </div>
-                
-                <div className="mt-auto grid grid-cols-2 gap-2 pb-2 pt-2 relative z-10">
-                   <div className="h-16 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
-                     <span className="text-[8px] text-brand-lime-400 font-bold tracking-widest mb-1">ESPÉCIES</span>
-                     <span className="text-xs font-medium text-white">Cedrela f.</span>
-                   </div>
-                   <div className="h-16 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
-                     <span className="text-[8px] text-brand-lime-400 font-bold tracking-widest mb-1">PARCELA</span>
-                     <span className="text-xs font-medium text-white">B-12</span>
-                   </div>
-                </div>
+
               </div>
             </div>
             
@@ -508,14 +620,20 @@ function Features() {
                  </div>
                  {/* Camera Viewfinder */}
                  <div className="flex-1 my-2 bg-slate-800 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-700">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80" alt="Camera View" className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-overlay" />
-                    {/* Viewfinder brackets */}
-                    <div className="absolute w-40 h-16 border-2 border-brand-green-400/80 rounded-xl flex items-center justify-center bg-brand-green-400/10 backdrop-blur-[2px]">
-                       <div className="absolute w-[110%] h-[2px] bg-brand-green-400 shadow-[0_0_12px_rgba(7ade80,1)] top-1/2 -translate-y-1/2"></div>
-                       <Barcode className="w-8 h-8 text-white opacity-90" />
-                    </div>
+                    <video 
+                      src="/video.mp4" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                      className="absolute inset-0 w-full h-full object-cover opacity-90"
+                    >
+                      {/* Placeholder fallback se o vídeo não carregar */}
+                      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80" alt="Camera View" className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale mix-blend-overlay" />
+                    </video>
+                    {/* Viewfinder brackets - kept for overlay effect if desired, or we can just let the video play. Since the video already has the viewfinder, we can remove the fake green brackets or keep them subtle */}
                     {/* Corner marks */}
-                    <div className="absolute inset-4">
+                    <div className="absolute inset-4 pointer-events-none">
                       <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/50 rounded-tl-lg"></div>
                       <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/50 rounded-tr-lg"></div>
                       <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/50 rounded-bl-lg"></div>
@@ -530,6 +648,274 @@ function Features() {
                    </div>
                  </div>
                </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Block 5 */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-32">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 md:order-1"
+          >
+            <div className="aspect-square bg-slate-50 border border-slate-100 rounded-[3rem] p-8 relative flex items-center justify-center overflow-hidden">
+               <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+               {/* UI Mockup for Flora Catalog */}
+               <div className="relative z-10 w-full max-w-sm bg-white rounded-2xl shadow-xl shadow-slate-200/50 p-6 border border-slate-200 overflow-hidden h-[450px]">
+                 
+                 {/* Top Info */}
+                 <div className="flex items-center justify-between mb-6">
+                   <div className="flex flex-col">
+                     <span className="font-extrabold text-slate-900 text-[18px]">Árvore 3</span>
+                     <span className="text-[13px] text-slate-500 font-bold mt-0.5">Fuste 01</span>
+                   </div>
+                   <button className="flex shrink-0 items-center justify-center gap-2 bg-[#262423] text-white px-4 py-2.5 rounded-[12px] text-sm font-bold shadow-sm hover:bg-black transition-colors whitespace-nowrap">
+                     <Navigation className="w-4 h-4 stroke-[2.5] -rotate-45" />
+                     Capturar GPS
+                   </button>
+                 </div>
+
+                 {/* Espécie */}
+                 <div className="space-y-2 relative z-20">
+                   <label className="text-xs font-bold text-slate-700 tracking-wider">ESPÉCIE</label>
+                   
+                   <div className="relative">
+                     <div className="relative z-20">
+                       <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                         <Search className="h-[18px] w-[18px] text-slate-400 stroke-[2.5]" />
+                       </div>
+                       <input type="text" value="Jato|" readOnly className="w-full bg-white border-[1.5px] border-brand-blue-400/60 ring-2 ring-brand-blue-50 rounded-xl pl-10 pr-3 py-3 text-[17px] text-slate-900 font-medium focus:outline-none shadow-sm rounded-b-none border-b-0" />
+                     </div>
+                     
+                     {/* Dropdown Menu */}
+                     <div className="absolute left-0 right-0 top-full bg-white border border-slate-200 rounded-b-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] z-30 pt-1 pb-1">
+                       
+                       <div className="px-4 py-3 border-b border-slate-100 hover:bg-slate-50 cursor-pointer">
+                         <div className="flex justify-between items-center mb-1">
+                           <span className="font-bold text-slate-900 text-[15px]">Jatobá</span>
+                           <span className="text-[10px] text-slate-400 font-bold tracking-wider">FABACEAE</span>
+                         </div>
+                         <div className="flex items-center gap-2 text-brand-green-600">
+                           <Leaf className="w-3.5 h-3.5 stroke-[2.5]" />
+                           <span className="text-[14px] italic text-slate-500 font-medium">Hymenaea courbaril L.</span>
+                         </div>
+                       </div>
+
+                       <div className="px-4 py-3 border-b border-slate-100 hover:bg-slate-50 cursor-pointer">
+                         <div className="flex justify-between items-center mb-1">
+                           <span className="font-bold text-slate-900 text-[15px]">Jatobá-do-cerrado</span>
+                           <span className="text-[10px] text-slate-400 font-bold tracking-wider">FABACEAE</span>
+                         </div>
+                         <div className="flex items-start gap-2 text-brand-green-600">
+                           <Leaf className="w-3.5 h-3.5 stroke-[2.5] mt-1 shrink-0" />
+                           <span className="text-[14px] italic text-slate-500 font-medium leading-snug">Hymenaea stigonocarpa Mart. ex Hayn</span>
+                         </div>
+                       </div>
+
+                       <div className="px-4 py-3 hover:bg-slate-50 cursor-pointer">
+                         <div className="flex justify-between items-center mb-1">
+                           <span className="font-bold text-slate-900 text-[15px]">Jatobá</span>
+                           <span className="text-[10px] text-slate-400 font-bold tracking-wider">FABACEAE</span>
+                         </div>
+                         <div className="flex items-center gap-2 text-brand-green-600">
+                           <Leaf className="w-3.5 h-3.5 stroke-[2.5]" />
+                           <span className="text-[14px] italic text-slate-500 font-medium">Hymenaea courbaril L.</span>
+                         </div>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
+
+                 {/* Qualidade do fuste placeholder under dropdown */}
+                 <div className="absolute top-[370px] left-6 right-6 space-y-2 opacity-50 pointer-events-none">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[13px] font-medium text-slate-900">Qualidade do Fuste (1-4)</span>
+                      <Info className="w-4 h-4 text-slate-400" />
+                    </div>
+                    <div className="grid grid-cols-4 gap-2">
+                      <button className="py-2.5 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 text-sm">1</button>
+                      <button className="py-2.5 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 text-sm">2</button>
+                      <button className="py-2.5 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 text-sm">3</button>
+                      <button className="py-2.5 border border-slate-200 bg-white rounded-xl font-bold text-slate-900 text-sm">4</button>
+                    </div>
+                 </div>
+
+               </div>
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-1 md:order-2 space-y-6"
+          >
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Catálogo de Espécies Offline <br />e Personalizado</h3>
+            <p className="text-slate-600 font-light leading-relaxed">
+              Importação simplificada e automação de ponta a ponta no inventário nativo. Esqueça as listas fixas que não se aplicam à sua região ou as horas gastas digitando nomes científicos no meio do mato. O GMS Inventário traz uma solução de gerenciamento botânico inteligente e 100% offline:
+            </p>
+            <div className="space-y-6 text-slate-600 font-light mt-6">
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Sua Lista, Suas Regras</strong>
+                Carregue o seu próprio catálogo de espécies direto no aplicativo. Basta preparar uma planilha simples em formato CSV com <span className="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-700 border border-slate-200 shadow-sm">NOME POPULAR</span>, <span className="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-700 border border-slate-200 shadow-sm">NOME CIENTÍFICO</span> e <span className="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-700 border border-slate-200 shadow-sm">FAMÍLIA</span>.
+              </div>
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Vínculo Instantâneo em Campo</strong>
+                Apenas selecione ou digite o Nome Popular da planta. O aplicativo cruza os dados e preenche de forma invisível o Nome Científico e a Família.
+              </div>
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Pós-Processamento Automático</strong>
+                Na exportação final, a planilha no Excel já conta com as três colunas preenchidas corretamente por árvore. Zero digitação no escritório.
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Block 6 */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Modo Silvicultura: Máxima<br/> Velocidade em Plantios</h3>
+            <p className="text-slate-600 font-light leading-relaxed">
+              Otimização extrema para inventário de florestas plantadas.
+              O monitoramento de plantios comerciais (como eucalipto ou pinus) exige rapidez de movimentação entre as linhas e parcelas. O Modo Silvicultura foi desenhado especificamente para essa dinâmica de alta produtividade:
+            </p>
+            <div className="space-y-6 text-slate-600 font-light mt-6">
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Configuração em Um Clique</strong>
+                Ao ativar o modo silvicultural na parcela, o usuário define apenas uma vez qual é a espécie plantada que será inventariada.
+              </div>
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Foco no que Importa</strong>
+                Durante a medição das árvores, a interface se fecha no essencial. O operador só precisa inserir o Diâmetro (DAP) e a Altura.
+              </div>
+              <div>
+                <strong className="text-slate-900 font-semibold block mb-1">Preenchimento Automatizado</strong>
+                O nome da espécie configurada no início é injetado automaticamente em cada novo registro, eliminando etapas repetitivas de seleção.
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="w-full max-w-sm mx-auto"
+          >
+            {/* Phone Mockup Re-styled Sleek */}
+            <div className="w-full h-[550px] bg-white rounded-[3rem] border-[8px] border-slate-800 shadow-2xl overflow-hidden relative mx-auto flex flex-col font-sans bg-[#fafafa]">
+              <div className="absolute top-0 w-full h-6 bg-slate-800 flex justify-center items-end pb-1 z-20">
+                <div className="w-16 h-4 bg-slate-900 rounded-full"></div>
+              </div>
+              <div className="w-full h-full flex flex-col pt-8 bg-[#fafafa]">
+                
+                {/* Header */}
+                <div className="flex items-center gap-3 px-4 py-3 bg-white border-b border-slate-100">
+                  <ChevronLeft className="w-5 h-5 text-slate-600" />
+                  <div className="flex flex-col text-brand-blue-600">
+                     <TreePine className="w-5 h-5 -mb-1" />
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-[17px]">Coleta de Dados</h3>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 overflow-hidden relative">
+                  <div className="absolute top-0 left-0 right-0 bottom-[90px] overflow-y-auto px-4 py-4 space-y-4">
+                    {/* Tabs */}
+                    <div className="bg-slate-100 p-1 rounded-xl flex gap-1 shadow-inner">
+                      <div className="bg-white text-brand-blue-600 flex-1 py-2.5 rounded-lg text-center text-sm font-bold shadow-sm border border-slate-200">
+                        Novo Indivíduo
+                      </div>
+                      <div className="text-slate-500 flex-1 py-2.5 rounded-lg text-center text-sm font-medium">
+                        Fuste Adicional
+                      </div>
+                    </div>
+
+                    {/* Arvore info */}
+                    <div className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm flex items-center justify-between">
+                      <div className="flex flex-col">
+                        <span className="font-extrabold text-slate-900 text-[15px]">Árvore 3</span>
+                        <span className="text-xs text-slate-500 font-bold mt-0.5">Fuste 01</span>
+                      </div>
+                      <button className="flex shrink-0 items-center gap-1.5 bg-[#262423] border border-[#363433] text-white px-3.5 py-2 rounded-[14px] text-xs font-bold shadow-sm hover:bg-black transition-colors whitespace-nowrap">
+                        <Navigation className="w-3.5 h-3.5 stroke-[2.5]" />
+                        Capturar GPS
+                      </button>
+                    </div>
+
+                    {/* Especie */}
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">ESPÉCIE</label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <Search className="h-4 w-4 text-slate-400" />
+                        </div>
+                        <div className="w-full pl-9 pr-3 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-base shadow-sm font-medium">
+                          Eucalyptus grandis
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* CAP / DAP Grid */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-700 tracking-wider">CAP</label>
+                        <div className="relative">
+                          <div className="w-full pl-3 pr-8 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                            82,0
+                          </div>
+                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <span className="text-sm font-bold text-slate-400">cm</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-700 tracking-wider">DAP</label>
+                        <div className="relative">
+                          <div className="w-full pl-3 pr-8 py-3 border border-slate-200 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                            26,1
+                          </div>
+                          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <span className="text-sm font-bold text-slate-400">cm</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Altura */}
+                    <div className="space-y-1.5 pb-8">
+                      <label className="text-xs font-bold text-slate-700 tracking-wider">ALT. TOT (M)</label>
+                      <div className="w-full px-3 py-3.5 border border-green-500 ring-2 ring-green-100 rounded-xl bg-white text-slate-900 text-lg tracking-widest text-center shadow-sm font-medium">
+                        10,0
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Actions Fixed Area */}
+                  <div className="absolute bottom-0 w-full bg-[#fafafa] border-t border-slate-100 p-4 pt-3 space-y-3 z-30 pb-6 rounded-b-[2.5rem]">
+                    <button className="w-full py-3.5 border border-brand-blue-200 bg-white text-brand-blue-600 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-brand-blue-50 transition-colors shadow-sm text-sm">
+                      <Plus className="w-4 h-4" />
+                      Salvar e Add Fuste
+                    </button>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button className="w-full py-[14px] border border-slate-200 bg-white text-slate-700 rounded-2xl font-bold hover:bg-slate-50 transition-colors shadow-sm text-sm">
+                        Cancelar
+                      </button>
+                      <button className="w-full py-[14px] bg-[#18539e] text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-blue-800 transition-colors shadow-md text-sm px-4">
+                        <Check className="w-4 h-4 shrink-0 stroke-[3]" />
+                        <span>Salvar Árvore</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </motion.div>
         </div>
@@ -623,8 +1009,7 @@ function Reports() {
                     <MapIcon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h5 className="text-slate-900 font-bold text-sm">Poligonos_Arvores.kml</h5>
-                    <p className="text-[10px] text-slate-400 font-medium tracking-wide">Pronto para o QGIS</p>
+                    <h5 className="text-slate-900 font-bold text-sm">Pontos_Arvores.kml</h5>
                   </div>
                 </div>
                 <button className="text-brand-blue-600 text-xs font-bold bg-brand-blue-50 px-4 py-2 rounded-lg hover:bg-brand-blue-100 transition-colors uppercase tracking-wider">
