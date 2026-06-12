@@ -1,6 +1,6 @@
 {
-  "name": "GMS Florestal",
-  "description": "Consultoria Ambiental e Engenharia Florestal Premium",
+  "name": "Site GMS Inventário",
+  "description": "Landing page para o aplicativo de Inventário Florestal da GMS Florestal.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
